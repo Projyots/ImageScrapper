@@ -8,7 +8,7 @@ from urllib.request import urlretrieve
 
 
 class ImageScrapper:
-    '''
+
     def delete_existing_image(self, list_of_images):
         for self.image in list_of_images:
             try:
@@ -16,7 +16,7 @@ class ImageScrapper:
             except Exception as e:
                 print('error in deleting:  ', e)
         return 0
-'''
+
     def list_only_jpg_files(self, folder_name):
         self.list_of_jpg_files = []
         self.list_of_files = os.listdir(folder_name)
