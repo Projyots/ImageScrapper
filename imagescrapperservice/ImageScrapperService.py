@@ -13,7 +13,7 @@ wd = webdriver.WebDriver(executable_path = os.environ.get("CHROMEDRIVER PATH"), 
 
 
 
-DRIVER_PATH = r'C:\Users\pRoJyot\Downloads\Programs\chromedriver.exe'
+
 #wd = webdriver.ChromeRemoteConnection(DRIVER_PATH)
 
 target_folder = './static'
