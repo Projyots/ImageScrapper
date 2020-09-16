@@ -20,14 +20,14 @@ def home():
 @cross_origin()
 def show_images():
     scraper_object = ImageScrapper()  # Instantiating the object of class ImageScrapper
-    list_of_jpg_files = scraper_object.list_only_jpg_files(
-        'static')  # obtaining the list of image files from the static folder
-    print(list_of_jpg_files)
+    list_of_jpg_files = scraper_object.list_only_jpg_files('static')  # obtaining the list of image files from the static folder
+    print("list_of_jpg_files ===", list_of_jpg_files)
     try:
-        if (len(list_of_jpg_files) > 0):  # if there are images present, show them on a wen UI
+        if len(list_of_jpg_files) > 0:  # if there are images present, show them on a web UI
             return render_template('showImage.html', user_images=list_of_jpg_files)
         else:
-            return "Please try with a different string"  # show this error message if no images are present in the static folder
+            return "Please try with a different string"  # show this error message if no images are present in the
+            # static folder
     except Exception as e:
         print('no Images found ', e)
         return "Please try with a different string"
@@ -44,10 +44,8 @@ def searchImages():
     print('printing = ' + keyWord)
 
     scraper_object = ImageScrapper()  # instantiating the class
-    list_of_jpg_files = scraper_object.list_only_jpg_files(
-        'static')  # obtaining the list of image files from the static folder
-    scraper_object.delete_existing_image(
-        list_of_jpg_files)  # deleting the old image files stored from the previous search
+    list_of_jpg_files = scraper_object.list_only_jpg_files('static')  # obtaining the list of image files from the static folder
+    scraper_object.delete_existing_image(list_of_jpg_files)  # deleting the old image files stored from the previous search
     # splitting and combining the keyword for a string containing multiple words
     image_name = keyWord.split()
     image_name = '+'.join(image_name)
@@ -95,5 +93,5 @@ def get_image_url():
 
 
 if __name__ == "__main__":
-    # app.run(host='127.0.0.1', port=8000) # port to run on local machine
-    app.run(debug=True)  # to run on cloud
+    app.run(host='127.0.0.1', port=8000) # port to run on local machine
+    #app.run(debug=True)  # to run on cloud
