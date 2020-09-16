@@ -10,6 +10,8 @@ import html5lib
 from urllib.request import urlretrieve
 
 
+
+
 class ImageScrapper:
 
     def delete_existing_image(self, list_of_images):

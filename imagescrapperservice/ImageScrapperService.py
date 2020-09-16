@@ -1,11 +1,21 @@
 from imagescrapper.ImageScrapper import ImageScrapper
 from imagescrapperutils.ImageScapperUtils import ImageScrapperUtils
-from selenium.webdriver.chrome import webdriver
+from selenium import webdriver
+import os
+
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+chrome_options.add_argument("-headless")
+chrome_options.add_argument("--disable-dev-shm-usages")
+chrome_options.add_argument("--no-sandbox")
+wd = webdriver.WebDriver(executable_path = os.environ.get("CHROMEDRIVER PATH"), chrome_options = chrome_options)
+
+
 
 
 DRIVER_PATH = r'C:\Users\pRoJyot\Downloads\Programs\chromedriver.exe'
 #wd = webdriver.ChromeRemoteConnection(DRIVER_PATH)
-wd = webdriver.WebDriver(executable_path = DRIVER_PATH)
+
 target_folder = './static'
 
 class ImageScrapperService:
